@@ -1,6 +1,6 @@
 name: "name-of-this-experiment-run"
 tag: "${rmspace:${system.prompt_processor.prompt},_}"
-exp_root_dir: "/path/to/your/save/folder"
+exp_root_dir: "/content/exp"
 seed: 0
  
 data_type: "random-camera-datamodule"
@@ -36,7 +36,7 @@ system_type: "gaussiandreamer-system"
 system:
   radius: ${data.eval_camera_distance}
   texture_structure_joint: true
-  smplx_path: "/path/to/the/downloaded/smplx_models"
+  smplx_path: "/content"
   disable_hand_densification: false
   pts_num: 100000
   densify_prune_start_step: 300
@@ -62,7 +62,7 @@ system:
   guidance_type: "dual-branch-guidance"
   guidance:
     pretrained_model_name_or_path: "stabilityai/stable-diffusion-2-base"
-    model_key: "/path/to/pretrained/texture-structure_joint_model"
+    model_key: "/content/texture-structure-joint"
     vae_key: "stabilityai/sd-vae-ft-mse"
     guidance_scale: 7.5
     weighting_strategy: sds
